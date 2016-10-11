@@ -1,4 +1,8 @@
+require 'sendgrid-ruby'
+
 class CheckoutsController < ApplicationController
+  include SendGrid
+
   TRANSACTION_SUCCESS_STATUSES = [
     Braintree::Transaction::Status::Authorizing,
     Braintree::Transaction::Status::Authorized,
