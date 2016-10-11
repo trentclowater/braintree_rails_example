@@ -3,7 +3,7 @@
   "description": "An example Braintree integration for Ruby on Rails",
   "keywords": ["braintree", "ruby", "rails"],
   "website": "https://www.braintreepayments.com",
-  "repository": "https://github.com/braintree/braintree_rails_example",
+  "repository": "https://github.com/trentclowater/braintree_rails_example",
   "logo": "https://avatars1.githubusercontent.com/u/3453",
   "success_url": "/",
   "env": {
