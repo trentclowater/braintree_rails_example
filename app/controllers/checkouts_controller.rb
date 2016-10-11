@@ -44,15 +44,15 @@ class CheckoutsController < ApplicationController
 
     if TRANSACTION_SUCCESS_STATUSES.include? status
       result_hash = {
-        :header => "Sweet Success!",
+        :header => "Your Bayshore Pacific Loyalty Card is on it's way!",
         :icon => "success",
-        :message => "Your test transaction has been successfully processed. See the Braintree API response and try again."
+        :message => "Your transaction has been successfully processed. You should receive your Bayshore Pacific Loyalty Card in a few weeks."
       }
     else
       result_hash = {
-        :header => "Transaction Failed",
+        :header => "Sorry, there was a problem processing your transaction.",
         :icon => "fail",
-        :message => "Your test transaction has a status of #{status}. See the Braintree API response and try again."
+        :message => "Your transaction has a status of #{status}. Please try again."
       }
     end
   end
