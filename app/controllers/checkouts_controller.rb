@@ -39,7 +39,7 @@ class CheckoutsController < ApplicationController
 
       from = Email.new(email: 'commender-payments-demo@example.com')
       subject = 'Your Bayshore Pacific Hospitality Card!'
-      to = Email.new(email: 'trent@reqvu.com')
+      to = Email.new(email: params['email'])
       content = Content.new(type: 'text/plain', value: 'Congratulations! Your new Bayshore Pacific Hospitality card is on its way!')
       mail = Mail.new(from, subject, to, content)
 
