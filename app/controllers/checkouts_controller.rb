@@ -44,9 +44,9 @@ class CheckoutsController < ApplicationController
 
     if TRANSACTION_SUCCESS_STATUSES.include? status
       result_hash = {
-        :header => "Your Bayshore Pacific Loyalty Card is on it's way!",
+        :header => "Your Bayshore Pacific Hospitality Card is on it's way!",
         :icon => "success",
-        :message => "Your transaction has been successfully processed. You should receive your Bayshore Pacific Loyalty Card in a few weeks."
+        :message => "Your transaction has been successfully processed. You should receive your Bayshore Pacific Hospitality Card in a few weeks."
       }
     else
       result_hash = {
