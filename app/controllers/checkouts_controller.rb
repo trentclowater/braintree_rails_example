@@ -32,6 +32,16 @@ class CheckoutsController < ApplicationController
 
     if result.success? || result.transaction
       redirect_to checkout_path(result.transaction.id)
+
+      from = Email.new(email: 'commender-payments-demo@example.com')
+      subject = 'Your Bayshore Pacific Hospitality Card!'
+      to = Email.new(email: 'trent@reqvu.com')
+      content = Content.new(type: 'text/plain', value: 'Congratulations! Your new Bayshore Pacific Hospitality card is on its way!')
+      mail = Mail.new(from, subject, to, content)
+
+      sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+      sg.client.mail._('send').post(request_body: mail.to_json)
+
     else
       error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
       flash[:error] = error_messages
@@ -44,9 +54,9 @@ class CheckoutsController < ApplicationController
 
     if TRANSACTION_SUCCESS_STATUSES.include? status
       result_hash = {
-        :header => "Your Bayshore Pacific Hospitality Card is on it's way!",
+        :header => "You are a Bayshore Pacific Hospitality VIP!",
         :icon => "success",
-        :message => "Your transaction has been successfully processed. You should receive your Bayshore Pacific Hospitality Card in a few weeks."
+        :message => "You will receive a confirmation email you can show to start receiving your 20% discount right away. A physical card will be provided to your credit card mailing address within 14 days."
       }
     else
       result_hash = {

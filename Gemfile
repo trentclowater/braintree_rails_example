@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'braintree', '~> 2.47'
+gem 'sendgrid-ruby'
 
 gem 'dotenv', '~> 2.0'
 
