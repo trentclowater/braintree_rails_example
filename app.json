@@ -24,14 +24,6 @@
       "description": "Your Braintree Private Key",
       "required": true
     },
-    "SENDGRID_USERNAME": {
-      "description": "Your SendGrid User Name",
-      "required": true
-    },
-    "SENDGRID_PASSWORD": {
-      "description": "Your SendGrid Password",
-      "required": true
-    },
     "SENDGRID_API_KEY": {
       "description": "Your SendGrid API Key",
       "required": true
