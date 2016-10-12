@@ -40,7 +40,7 @@ class CheckoutsController < ApplicationController
       from = Email.new(email: 'commender-payments-demo@example.com')
       subject = 'Your Bayshore Pacific Hospitality Card!'
       to = Email.new(email: params['email'])
-      content = Content.new(type: 'text/plain', value: 'Congratulations! Your new Bayshore Pacific Hospitality card is on its way!')
+      content = Content.new(type: 'text/plain', value: 'Congratulations! You can now start enjoying a 20% discount!\n\nShow this confirmation email to your server at any Bayshore Pacific Hospitality restaurant to receive 20% off your bill.\n\nYour Bayshore Pacific Hospitality VIP confirmation number is: 123 456 789 101\n\nBayshore Pacific Hospitality brands include: TGI Fridays (Taiwan Only)\n\nTexas Roadhouse (Taiwan Only)\n\nDan Ryan\'s Chicago Grill\n\nAmaroni\'s New York Italian Cafe & Restaurant\n\nThanks for joining! The BPH Team\nwww.bayshorepacifichospitality.com\nVIP Card Terms & Conditions\nwww.bayshorepacifichospitality.com/terms.htm')
       mail = Mail.new(from, subject, to, content)
 
       sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
