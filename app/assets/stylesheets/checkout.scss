@@ -2,10 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header img {
+header img.card {
   display: block;
   margin-top: 20px;
   width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header img.logos {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
